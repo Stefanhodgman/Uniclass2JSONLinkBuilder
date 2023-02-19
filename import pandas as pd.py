@@ -15,11 +15,15 @@ for index, row in df.iterrows():
     
     # If the parent code is not in the dictionary, add it as a key with an empty list as the value
     if parent_code not in codes_dict:
-        codes_dict[parent_code] = {"parentCode": parent_code, "childCodes": []}
+        codes_dict[parent_code] = {"parentCode": parent_code, "childCodes": ""}
     
-    # Add the code to the list of child codes for the parent code
-    codes_dict[parent_code]["childCodes"].append(code)
+    # Add the code to the list of child codes for the parent code, separated by "#"
+    codes_dict[parent_code]["childCodes"] += f"{code}#"
+
+# Remove the trailing "#" from each list of child codes
+for code in codes_dict.values():
+    code["childCodes"] = code["childCodes"][:-1]
 
 # Convert the dictionary to JSON and save it to a file
 with open(r"C:\Uniclass\codes.json", "w") as json_file:
-    json.dump(list(codes_dict.values()), json_file, separators=(',', ':'))
+    json.dump(list(codes_dict.values()), json_file, separators=(',', ':'), indent=2)
