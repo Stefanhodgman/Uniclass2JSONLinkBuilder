@@ -11,6 +11,7 @@ codes_dict = {}
 for index, row in df.iterrows():
     code = row["Code"]
     parent_code = code[:-2]  # Assume that the parent code is all but the last two characters of the code
+    parent_code = parent_code.rstrip("_")  # Remove any trailing underscores from the parent code
     
     # If the parent code is not in the dictionary, add it as a key with an empty list as the value
     if parent_code not in codes_dict:
