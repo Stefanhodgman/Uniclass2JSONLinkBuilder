@@ -23,10 +23,35 @@ for filename in os.listdir(directory):
     # Check if the file is an Excel file
     if filename.endswith(".xlsx") or filename.endswith(".xls"):
         filepath = os.path.join(directory, filename)
+            # Create a variable to keep track of the user's choice to skip lines for all files
+    skip_lines_all = False
+
+# Iterate over each file in the directory
+for filename in os.listdir(directory):
+    # Check if the file is an Excel file
+    if filename.endswith(".xlsx") or filename.endswith(".xls"):
+        filepath = os.path.join(directory, filename)
 
         try:
             # Ask user if they want to skip the first two lines
-            skip_lines = tk.messagebox.askyesno("Skip Lines", f"Skip first two lines of {filename}?")
+            if not skip_lines_all:
+                skip_lines = tk.messagebox.askyesnocancel("Skip Lines", f"Skip first two lines of {filename}?")
+
+                if skip_lines is None:  # user clicked Cancel
+                    break
+                elif skip_lines:  # user clicked Yes
+                    skip_lines_all = tk.messagebox.askyesno("Skip Lines", "Skip first two lines for all files?")
+            else:
+                skip_lines = True
+
+            # Load Excel file into a pandas dataframe
+            if skip_lines:
+                df = pd.read_excel(filepath, sheet_name=0, usecols=["Code"], skiprows=2)
+            else:
+                df = pd.read_excel(filepath, sheet_name=0, usecols=["Code"])
+
+            # Rest of the code remains the same
+            ...
 
             # Load Excel file into a pandas dataframe
             if skip_lines:
