@@ -1,6 +1,6 @@
 # 
 
-TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe and point it at the downloaed and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite.
+TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe and point it at the downloaded and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite.
 
 -----------------------------------------------
 This is a Python script that processes Excel files in a selected directory, extracts information from them, and saves it in JSON format. The script first creates a Tkinter root window to allow the user to select a directory using a file dialog. It then iterates over each file in the directory, checks if it is an Excel file, and processes it. For each Excel file, the script reads the data into a pandas DataFrame, extracts relevant information, and saves it to a dictionary in JSON format.
