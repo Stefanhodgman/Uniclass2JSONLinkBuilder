@@ -1,6 +1,9 @@
 # 
 
-TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe (Look in the dist. folder for the exe) and point it at the downloaded and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite.
+TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe (Look in the dist. folder for the exe) and point it at the downloaded and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents using the numbered codes and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite. This does not build the initial attributes but does build the links, list building coming in future releases.
+
+![image](https://user-images.githubusercontent.com/22170122/220557265-0290c084-a804-4f6d-9c6f-27a48ccc7ee1.png)
+![image](https://user-images.githubusercontent.com/22170122/220557596-4527b394-9b15-47f1-9c72-9e9c4b57f9f2.png)
 
 -----------------------------------------------
 This is a Python script that processes Excel files in a selected directory, extracts information from them, and saves it in JSON format. The script first creates a Tkinter root window to allow the user to select a directory using a file dialog. It then iterates over each file in the directory, checks if it is an Excel file, and processes it. For each Excel file, the script reads the data into a pandas DataFrame, extracts relevant information, and saves it to a dictionary in JSON format.
@@ -11,3 +14,4 @@ The script also handles errors that may occur during the processing of the Excel
 
 Overall, the script is a simple and effective way to process Excel files and extract relevant information from them. It uses popular Python libraries like pandas and json to handle data and file formats, and the Tkinter library to create a simple user interface for selecting a directory.
  
+
