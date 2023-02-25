@@ -1,6 +1,6 @@
 # 
 
-TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe (Look in the dist. folder for the exe) and point it at the downloaded and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents using the numbered codes and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite. This does not build the initial attributes but does build the links, list building coming in future releases.
+TLDR; You download the NBS Uniclass tables in Excel format, Download and run this exe (Look in the dist. folder for the exe) and point it at the downloaded and extracted Uniclass files and select Yes to skip the first two lines for all (becuase the files all have the first two lines with irrelevant data) then it will match the child codes with its parents using the numbered codes and output JSON files for each file and one JSON with all data combined. You can then use this JSON to run the REST API for Asite. Some work lef to do here is to add the header and footer required by asite's api
 
 ![image](https://user-images.githubusercontent.com/22170122/220557265-0290c084-a804-4f6d-9c6f-27a48ccc7ee1.png)
 ![image](https://user-images.githubusercontent.com/22170122/220557596-4527b394-9b15-47f1-9c72-9e9c4b57f9f2.png)
